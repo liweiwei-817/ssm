@@ -5,8 +5,8 @@
 <mapper namespace="fun.lww.dao.SuccessKilledDao">
     <insert id="insertSuccessKilled">
         -- 当出现主键冲突 以至于insert插入报错 ignore防止报错 插入失败直接返回0
-        insert ignore into success_killed(seckill_id, user_phone)
-        values(#{seckillId}, #{userPhone})
+        insert ignore into success_killed(seckill_id, user_phone, state)
+        values(#{seckillId}, #{userPhone}, 0)
     </insert>
     <select id="queryByIdWithSeckill" resultType="SuccessKilled">
 -- 根据id查询successKilled 并携带seckill实体
@@ -17,7 +17,7 @@
           sk.user_phone,
           sk.create_time,
           sk.state,
-          s.s.seckill_id "seckill.seckill_id",
+          s.seckill_id "seckill.seckill_id",
           s.name "seckill.name",
           s.number "seckill.number",
           s.start_time "seckill.start_time",
@@ -25,8 +25,9 @@
           s.create_time "seckill.create_time"
         from
           success_killed sk
-          inner join seckil s on sk.seckill_id = s.seckill_id
+          inner join seckill s on sk.seckill_id = s.seckill_id
         where
           sk.seckill_id=#{seckillId}
+          and sk.user_phone=#{userPhone}
     </select>
 </mapper>
