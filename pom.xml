@@ -15,7 +15,6 @@
       <scope>test</scope>
     </dependency>
 
-
     <!--1. 日志依赖 Java日志：slf4j, log4j, logback, common-logging
       slf4j是规范/接口
       日至实现log4j, logback,  common-logging

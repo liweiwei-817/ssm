@@ -1,6 +1,5 @@
 package fun.lww.dao;
 
-import ch.qos.logback.core.net.SyslogOutputStream;
 import fun.lww.entity.SuccessKilled;
 import org.junit.Test;
 import org.junit.runner.RunWith;
