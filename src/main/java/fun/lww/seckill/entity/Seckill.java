@@ -1,4 +1,4 @@
-package fun.lww.entity;
+package fun.lww.seckill.entity;
 
 import java.util.Date;
 

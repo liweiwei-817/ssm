@@ -1,4 +1,4 @@
-package fun.lww.exception;
+package fun.lww.seckill.exception;
 
 /**
  * 重复秒杀异常(运行期异常）

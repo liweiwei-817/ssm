@@ -1,6 +1,6 @@
-package fun.lww.dao;
+package fun.lww.seckill.dao;
 
-import fun.lww.entity.SuccessKilled;
+import fun.lww.seckill.entity.SuccessKilled;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;

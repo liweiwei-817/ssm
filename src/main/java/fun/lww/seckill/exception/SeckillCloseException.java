@@ -1,4 +1,4 @@
-package fun.lww.exception;
+package fun.lww.seckill.exception;
 
 /**
  * 秒杀关闭异常

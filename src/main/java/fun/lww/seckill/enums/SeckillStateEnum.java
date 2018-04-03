@@ -1,4 +1,4 @@
-package fun.lww.enums;
+package fun.lww.seckill.enums;
 
 /**
  * 使用枚举表述常量数据字典

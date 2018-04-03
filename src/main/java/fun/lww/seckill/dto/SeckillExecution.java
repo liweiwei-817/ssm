@@ -1,7 +1,7 @@
-package fun.lww.dto;
+package fun.lww.seckill.dto;
 
-import fun.lww.entity.SuccessKilled;
-import fun.lww.enums.SeckillStateEnum;
+import fun.lww.seckill.entity.SuccessKilled;
+import fun.lww.seckill.enums.SeckillStateEnum;
 
 /**
  * 封装秒杀执行后结果
@@ -42,6 +42,16 @@ public class SeckillExecution {
         this.state = stateEnum.getState();
         this.stateInfo = stateEnum.getStateInfo();
         this.successKilled = successKilled;
+    }
+
+    @Override
+    public String toString() {
+        return "SeckillExecution{" +
+                "seckillId=" + seckillId +
+                ", state=" + state +
+                ", stateInfo='" + stateInfo + '\'' +
+                ", successKilled=" + successKilled +
+                '}';
     }
 
     public long getSeckillId() {

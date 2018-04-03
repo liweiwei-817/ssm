@@ -1,4 +1,4 @@
-package fun.lww.exception;
+package fun.lww.seckill.exception;
 
 /**
  * 秒杀相关业务异常

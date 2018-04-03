@@ -1,11 +1,11 @@
-package fun.lww.service;
+package fun.lww.seckill.service;
 
-import fun.lww.dto.Exposer;
-import fun.lww.dto.SeckillExecution;
-import fun.lww.entity.Seckill;
-import fun.lww.exception.RepeatKillException;
-import fun.lww.exception.SeckillCloseException;
-import fun.lww.exception.SeckillException;
+import fun.lww.seckill.dto.Exposer;
+import fun.lww.seckill.dto.SeckillExecution;
+import fun.lww.seckill.entity.Seckill;
+import fun.lww.seckill.exception.RepeatKillException;
+import fun.lww.seckill.exception.SeckillCloseException;
+import fun.lww.seckill.exception.SeckillException;
 
 import java.util.List;
 

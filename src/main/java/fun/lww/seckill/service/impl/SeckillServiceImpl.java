@@ -1,16 +1,16 @@
-package fun.lww.service.impl;
+package fun.lww.seckill.service.impl;
 
-import fun.lww.dao.SeckillDao;
-import fun.lww.dao.SuccessKilledDao;
-import fun.lww.dto.Exposer;
-import fun.lww.dto.SeckillExecution;
-import fun.lww.entity.Seckill;
-import fun.lww.entity.SuccessKilled;
-import fun.lww.enums.SeckillStateEnum;
-import fun.lww.exception.RepeatKillException;
-import fun.lww.exception.SeckillCloseException;
-import fun.lww.exception.SeckillException;
-import fun.lww.service.SeckillService;
+import fun.lww.seckill.dao.SeckillDao;
+import fun.lww.seckill.dao.SuccessKilledDao;
+import fun.lww.seckill.dto.Exposer;
+import fun.lww.seckill.dto.SeckillExecution;
+import fun.lww.seckill.entity.Seckill;
+import fun.lww.seckill.entity.SuccessKilled;
+import fun.lww.seckill.enums.SeckillStateEnum;
+import fun.lww.seckill.exception.RepeatKillException;
+import fun.lww.seckill.exception.SeckillCloseException;
+import fun.lww.seckill.exception.SeckillException;
+import fun.lww.seckill.service.SeckillService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,7 +61,7 @@ public class SeckillServiceImpl implements SeckillService {
         }
         //转化特定字符串过程 不可逆
         String md5 = getMD5(seckillId);
-        return new Exposer(true, md5, seckillId);
+        return new Exposer(true, md5, seckillId, nowTime.getTime(), startTime.getTime(), endTime.getTime());
     }
 
     private String getMD5(long seckillId) {
@@ -79,7 +79,7 @@ public class SeckillServiceImpl implements SeckillService {
     @Transactional
     public SeckillExecution executeSeckill(long seckillId, long userPhone, String md5)
             throws SeckillException, RepeatKillException, SeckillCloseException {
-        if(md5 == null || md5.equals(getMD5(seckillId))) {
+        if(md5 == null || !md5.equals(getMD5(seckillId))) {
             throw new SeckillException("seckill data rewrite");
         }
         //秒杀业务逻辑 减库存 和 记录购买行为

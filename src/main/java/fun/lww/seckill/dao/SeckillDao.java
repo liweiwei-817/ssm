@@ -1,6 +1,6 @@
-package fun.lww.dao;
+package fun.lww.seckill.dao;
 
-import fun.lww.entity.Seckill;
+import fun.lww.seckill.entity.Seckill;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.Date;

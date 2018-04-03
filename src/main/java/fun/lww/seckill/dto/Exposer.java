@@ -1,4 +1,4 @@
-package fun.lww.dto;
+package fun.lww.seckill.dto;
 
 /**
  * 暴漏秒杀地址dto
@@ -38,6 +38,15 @@ public class Exposer {
 
     public Exposer(boolean exposed, long seckilled, long now, long start, long end) {
         this.exposed = exposed;
+        this.seckilled = seckilled;
+        this.now = now;
+        this.start = start;
+        this.end = end;
+    }
+
+    public Exposer(boolean exposed, String md5, long seckilled, long now, long start, long end) {
+        this.exposed = exposed;
+        this.md5 = md5;
         this.seckilled = seckilled;
         this.now = now;
         this.start = start;

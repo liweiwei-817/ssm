@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="fun.lww.dao.SuccessKilledDao">
+<mapper namespace="fun.lww.seckill.dao.SuccessKilledDao">
     <insert id="insertSuccessKilled">
         -- 当出现主键冲突 以至于insert插入报错 ignore防止报错 插入失败直接返回0
         insert ignore into success_killed(seckill_id, user_phone, state)
