@@ -40,7 +40,7 @@ DELIMITER ;
 SET @r_result = -3;
 -- 执行存储过程
 call execute_seckill(1003,11111111111,now(),@r_result);
---获取结果
+-- 获取结果
 SELECT @r_result;
 
 -- 存储过程
