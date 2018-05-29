@@ -100,6 +100,5 @@ public class SeckillController {
     public SeckillResult<Long> time() {
         Date d = new Date();
         return new SeckillResult<Long>(true, d.getTime());
-
     }
 }
